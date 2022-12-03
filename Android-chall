@@ -1,0 +1,10 @@
+To view the source code if APK file is provided:
+CMD: "C:\Program Files\jadx\bin\jadx-gui"
+
+To decode the APK and create the source code files:
+CMD: "C:\Program Files\platform-tools\apktool" -d file.apk -o "output folder"
+
+To install the APK as an application in mobile phone:
+    Note: ensure Debugging mode is enabled on the phone
+    Note: Ensure the mobile phone is connected to the laptop
+CMD: "C:\Program Files\platform-tools\adb" install file.apk
