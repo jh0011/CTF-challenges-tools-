@@ -1,0 +1,26 @@
+-e: The field to print
+-Y: display filter
+
+User agent: 
+tshark -r request_1640229984.pcap -T fields -e http.user_agent -Y "http" | grep -oP '(?<=//).*(?=/)' | sort | uniq -c | sort -n
+
+Referer:
+tshark -r request_1640229984.pcap -T fields -e http.referer -Y "http" | grep -oP '(?<=//).*(?=/)' | sort | uniq -c | sort -n
+
+X-Forwarded-For:
+tshark -r request_1640229984.pcap -T fields -e http.x_forwarded_for -Y "http" | grep -oP '(?<=//).*(?=/)' | sort | uniq -c | sort -n
+
+Accept:
+tshark -r request_1640229984.pcap -T fields -e http.accept -Y "http" | grep -oP '(?<=//).*(?=/)' | sort | uniq -c | sort -n
+
+Cookie:
+tshark -r request_1640229984.pcap -T fields -e http.cookie -Y "http" | grep -oP '(?<=//).*(?=/)' | sort | uniq -c | sort -n
+
+Authorization:
+tshark -r request_1640229984.pcap -T fields -e http.authorization -Y "http" | grep -oP '(?<=//).*(?=/)' | sort | uniq -c | sort -n
+
+HTML Form URL Encoded:
+tshark -r request_1640229984.pcap -T fields -e urlencoded-form.value -Y "http" | grep -oP '(?<=//).*(?=/)' | sort | uniq -c | sort -n
+
+ICMP Request:
+tshark -r STF22.pcapng -T fields -e data -Y "icmp.type==8 and data.data"
